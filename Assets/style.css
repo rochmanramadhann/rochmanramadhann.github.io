@@ -1,0 +1,400 @@
+@font-face {
+    font-family: "Roboto";
+    src: url('Fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body, li, a {
+    font-family: 'Roboto', 'calibri', 'sans-serif';
+    font-size: 16px;
+    list-style: none;
+    text-decoration: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+.flex-direction-collumn{
+    flex-direction: column;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.container {
+    max-width: 1050px;  
+    display: flex;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* ===================== Header ======================= */
+
+header {
+    width: 100%;
+    height: 79px;
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+    transition: .3s;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}   
+
+.nav-bar {
+    display: inline-flex;
+}
+
+nav .list li {
+    display: inline-block;
+    margin: 30px;
+}
+
+nav .list li a {
+    font-size: 16px;
+    color: #000000;
+    position: relative;
+}
+
+nav .list li a::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background:  #3DB5E2;
+    transition: 1s;
+}
+
+nav .list li a:hover {
+    color: #3DB5E2;
+    transition: 1s;
+}
+
+nav .list li a:hover::after {
+    width: 100%;
+    transition: 1s;
+}
+
+nav .list li .a-active::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #3DB5E2;
+}
+
+.btn {
+    margin: 0 0 0 10px;
+    width: 150px;
+    height: 55px;
+    border-radius: 40px;
+    border-style: none;
+    font-size: 14px;
+    font-weight: bold;
+    background-color:#3DB5E2;
+    color: white;
+    transition: 1s;
+}
+
+.btn:hover {
+    border: solid 1px #3DB5E2;
+    background-color: transparent;
+    color: #3DB5E2;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.nav-bar .btn-active {
+    border: solid 1px #3DB5E2;
+    background-color: transparent;
+    color: #3DB5E2;
+}
+
+.btnMenu {
+    margin: 0 0 0 auto ;
+    display: none;
+}
+
+/* =============== Jumbotron =================== */
+.jumbotron {
+    background-image: url(Img/bg-vector.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 900px;
+}
+
+.content {
+    width: 100%;
+}
+
+.content-jumbotron{
+    margin: 200px 0 0 0;
+}
+
+.content-text {
+    max-width: 500px;
+    min-height: 375px;
+    color: white;
+}
+
+.content-text h2 {
+    font-weight: bolder;
+    font-size: 48px;
+}
+
+.content-text p {
+    font-size: 16px;
+}
+
+.content-text .buttons {
+    width: 450px;
+    justify-content: space-between;
+}
+
+.content-text .buttons button {
+    width: 200px;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #3274CC;
+    transition: 1s;
+}
+
+.content-text .buttons button:hover {
+    border: solid 2px white;
+    background: transparent;
+    color: white;
+}
+
+.content-text .buttons .border {
+    border: solid 2px white;
+    background: transparent;
+    color: white;
+}
+
+.content-text .buttons .border:hover {
+    border: none;
+    background: #FFFFFF;
+    color: #3274CC;
+}
+
+
+.we-do {
+    width: 100%;
+    min-height: 1000px;
+    background-image: url(img/bg2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.we-do .title {
+    margin: 50px auto 25px auto;
+    text-align: center;
+    padding: 50px;
+}
+
+.we-do .title h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.we-do .we-do-content-icon {
+    width: 235px;
+    height: 300px;
+    margin: 10px auto;
+    justify-content: space-around;
+    text-align: center;
+    transition: 0.5s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+}
+
+.we-do .we-do-content-icon:hover .icon {
+    box-shadow: none;
+    background-color: white;
+}
+
+.we-do .we-do-content-icon .icon-name {
+    color: black;
+    font-weight: 700;
+}
+
+.we-do .we-do-content-icon p {
+    max-width: 80%;
+}
+
+
+
+/* ==================== RWD ===================== */
+@media all and (max-width : 780px){
+
+    .container {
+        max-width: 650px; 
+    }
+
+    header .logo {
+        margin: 15px 0 0 0;
+    }
+
+    header .nav-bar {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        /* transform: translateX(150px); */
+        /* width: 100vh; */
+        height: 100vh; 
+        margin: 69px 0 0 0;
+        background-color: #333333;
+        transition: 0.5s ease-in-out;
+        clip-path: circle(0% at 0% 0%);
+        /* opacity: 0; */
+    }
+
+
+    header nav {
+        margin: 0;
+    }
+
+    header .nav-bar .list {
+        margin: 50px 0 0 0;
+    }
+
+    header .nav-bar .list li {
+        display: block;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    header .nav-bar .list a{
+        color: white;
+    }
+
+    .btn {
+        height: 30px;
+        margin: 0;
+        background-color: transparent;
+        color:white;
+    }
+
+    /* ===================== btnMenu ================== */
+
+    .btnMenu {
+        width: 50px;
+        height: 50px;
+        margin: 15px;
+        display: inline;
+    }
+
+    header .active {
+        clip-path: circle(100%);
+    }
+
+    .content-jumbotron{
+        margin: 100px 0 0 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-jumbotron .content-text{
+        margin: 0 0 25px 0;
+    }
+
+    .we-do-content {
+        flex-wrap: wrap;
+    }
+
+    .we-do .we-do-content-icon {
+        margin: 25px auto;
+    }
+}
+
+@media all and (max-width : 480px){
+    .container {
+        max-width: 400px;
+    }
+
+    .content-jumbotron{
+        margin: 200px 0 0 0;
+    }
+
+    .content-jumbotron .content-illustration{
+        display: none;
+    }
+
+    .content-text {
+        max-width: 100%;
+    }
+
+    .content-text h2{
+        font-size: 36px;
+    }
+    
+    .content-text .buttons {
+        width: 450px;
+        justify-content: space-between;
+    }
+    
+    .content-text .buttons button {
+        width: 180px;
+        height: 45px;
+    }
+
+    .we-do .title h2 {
+        font-size: 32px;
+    }
+    
+}
+
+@media all and (max-width : 350px){
+    .container {
+        max-width: 300px;
+    }
+
+    .content-text {
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
+
+    .content-text .buttons button{
+        width: 140px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
